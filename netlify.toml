@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+# Explicitly declare the Next.js runtime so Git-triggered builds wire up the
+# server handler + routing. (CLI deploys auto-install it; server-side Git builds
+# for a freshly-created site need it declared here.)
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NODE_VERSION = "22"
